@@ -3,7 +3,16 @@ const app = express();
 const port = process.env.PORT || '8080';
 const db = require('./config/mongoose');
 
+//middleware to use assets
+app.use(express.static('./assets'));
+app.use(express.urlencoded());
 
+
+//setting view engine as ejs
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
+//router
 app.use('/', require('./routes'));
 
 //starting the server

@@ -1,4 +1,4 @@
 module.exports.homePage = (req, res) => {
-  console.log('Homepage');
+  res.render('home');
  
 }
