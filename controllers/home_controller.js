@@ -4,7 +4,9 @@ const path = require('path');
 const papa = require('papaparse');
 
 module.exports.homePage = (req, res) => {
-  res.render('home');
+  res.render('home',{
+    title: 'CSV Upload | Home'
+  });
  
 }
 
