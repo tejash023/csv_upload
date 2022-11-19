@@ -5,3 +5,10 @@
   <button type="submit">Upload</button>
 
 </form>
+
+<% for(let i = 0; i < files.length; i++) { %>
+<ul>
+  <a href="/view/<%= files[i]._id %>"><%= files[i].name %></a>
+ </ul> 
+
+<% } %>
