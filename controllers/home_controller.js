@@ -31,7 +31,7 @@ module.exports.uploadFile = (req, res) => {
       const csvData = fs.readFileSync(CSVFileUP, 'utf8');
 
       const conversedFile = papa.parse(csvData, { 
-        header: true 
+        header: false 
       
       });
 
