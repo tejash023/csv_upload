@@ -6,5 +6,6 @@ const homeController = require('../controllers/home_controller');
 console.log('Router Loaded');
 
 router.get('/', homeController.homePage);
+router.use('/file/uploads', homeController.uploadCSV);
 
 module.exports = router;
