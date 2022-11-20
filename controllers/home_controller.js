@@ -49,6 +49,8 @@ module.exports.uploadFile = (req, res) => {
 
     }catch(err){
       console.log("error", err);
+      return res.render('servererror');
+      
       
     }
   })
