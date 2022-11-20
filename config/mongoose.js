@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/csv_upload_dev');
+mongoose.connect('process.env.DB_URL');
 
 const db = mongoose.connection;
 
