@@ -29,7 +29,7 @@ const storage = multer.diskStorage({
 });
 
 //static functions
-csvSchema.statics.uploadedCSV = multer({storage: storage}).single('csv');
+csvSchema.statics.uploadedCSV = multer({storage: storage, limits:{fileSize: 1 * 1024 * 1024}}).single('csv');
 csvSchema.statics.csvPath = CSV_PATH;
 
 

@@ -4,6 +4,9 @@ const app = express();
 const port = process.env.PORT || '8080';
 const db = require('./config/mongoose');
 const expressLayouts = require('express-ejs-layouts');
+const session = require('express-session');
+const flash = require('connect-flash');
+const customeMW = require('.//config/middleware');
 
 //middleware to use assets
 app.use(express.static('./assets'));
@@ -18,6 +21,15 @@ app.set('layout extractScripts', true);
 //setting view engine as ejs
 app.set('view engine', 'ejs');
 app.set('views', './views');
+
+app.use(session({
+  secret: process.env.SECRET,
+  saveUninitialized: true,
+  resave: true
+}));
+
+app.use(flash());
+app.use(customeMW.setFlash);
 
 //router
 app.use('/', require('./routes'));

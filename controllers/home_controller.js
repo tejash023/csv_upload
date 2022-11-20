@@ -42,13 +42,17 @@ module.exports.uploadFile = (req, res) => {
           name: req.file.originalname,
           file: conversedFile.data
         });
-
+        req.flash('success', 'CSV uploaded successfully 🤙');
+        return res.redirect('back');
+      }else{
+        req.flash('error', 'only CSV file allowed');
         return res.redirect('back');
       }
 
 
     }catch(err){
       console.log("error", err);
+      req.flash('error', 'something went wrong ☹️');
       return res.render('servererror');
       
       
@@ -70,5 +74,6 @@ module.exports.displayCSV = async (req, res) => {
 //delete CSV from DB
 module.exports.deleteCSV = async (req, res) => {
   let deleteCSV = await CSVFile.findByIdAndDelete(req.params.id);
+  req.flash('success', 'CSV removed successfully 🤘');
   return res.redirect('back');
 }
