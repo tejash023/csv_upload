@@ -22,7 +22,7 @@ module.exports.uploadFile = (req, res) => {
 
       let csvFile = await CSVFile.findOne({name:req.file.originalname});
       if(csvFile){
-        console.log('csv already exists');
+        req.flash('error', 'CSV already exists! 😧')
         return res.redirect('back');
       }
 
