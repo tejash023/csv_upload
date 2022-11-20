@@ -22,12 +22,15 @@ app.set('layout extractScripts', true);
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+
+//to create an duse sessions
 app.use(session({
   secret: process.env.SECRET,
   saveUninitialized: true,
   resave: true
 }));
 
+//using connect-flash to display flash notification in FE
 app.use(flash());
 app.use(customeMW.setFlash);
 

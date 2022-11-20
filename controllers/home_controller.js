@@ -26,7 +26,7 @@ module.exports.uploadFile = (req, res) => {
         return res.redirect('back');
       }
 
-
+      //parsing CSV using papaparse
       const CSVFileUP = req.file.path;
       const csvData = fs.readFileSync(CSVFileUP, 'utf8');
 
@@ -35,9 +35,9 @@ module.exports.uploadFile = (req, res) => {
       
       });
 
-      //console.log(conversedFile);
-
+      //allowing only CSV input type
       if(req.file && req.file.mimetype == 'text/csv'){
+        //inserting the converted JSON to DB
         let csvFile = CSVFile.create({
           name: req.file.originalname,
           file: conversedFile.data
@@ -51,6 +51,7 @@ module.exports.uploadFile = (req, res) => {
 
 
     }catch(err){
+      //cathching errors and rendering common error page in the FE along with notification
       console.log("error", err);
       req.flash('error', 'something went wrong ☹️');
       return res.render('servererror');

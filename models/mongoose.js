@@ -32,6 +32,6 @@ const storage = multer.diskStorage({
 csvSchema.statics.uploadedCSV = multer({storage: storage, limits:{fileSize: 1 * 1024 * 1024}}).single('csv');
 csvSchema.statics.csvPath = CSV_PATH;
 
-
+//exports
 const CSVFile = mongoose.model('CSVFile', csvSchema)
 module.exports =  CSVFile;
