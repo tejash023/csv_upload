@@ -78,3 +78,15 @@ button:hover{
   text-decoration: none;
   color: #0044d4;
 }
+
+@media only screen and (max-width: 600px) {
+  .home-container form{
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+
+  .uploaded-files{
+    font-size: 1.2rem;
+    width: 75%;
+  }
+}

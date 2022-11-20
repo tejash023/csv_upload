@@ -17,3 +17,10 @@ footer {
     color: white; }
   footer a:hover {
     color: #03a9f4; }
+
+
+    @media only screen and (max-width: 600px) {
+      footer h4{
+        display: none;
+      }
+    }
