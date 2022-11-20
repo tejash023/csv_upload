@@ -1,0 +1,12 @@
+.container{
+  margin: 3rem 0px;
+  padding: 1rem;
+}
+
+#dataTable_wrapper{
+  width: 125%;
+}
+
+.row{
+  margin-bottom: 10px;
+}
