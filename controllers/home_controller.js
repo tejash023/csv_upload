@@ -64,3 +64,9 @@ module.exports.displayCSV = async (req, res) => {
     results: displayData.file
   })
 };
+
+//delete CSV from DB
+module.exports.deleteCSV = async (req, res) => {
+  let deleteCSV = await CSVFile.findByIdAndDelete(req.params.id);
+  return res.redirect('back');
+}

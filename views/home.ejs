@@ -9,6 +9,7 @@
 <% for(let i = 0; i < files.length; i++) { %>
 <ul>
   <a href="/view/<%= files[i]._id %>"><%= files[i].name %></a>
+  <a href="/delete/<%= files[i]._id %>"><i class="fa-solid fa-trash"></i></a>
  </ul> 
 
 <% } %>
