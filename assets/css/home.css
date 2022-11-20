@@ -57,12 +57,12 @@ button:hover{
   flex-direction: column;
   margin-top: 1rem;
   background-color: whitesmoke;
-  padding: 15px;
+  padding: 20px;
   font-size: 1.5rem;
   border-radius: 5px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   gap: 1.5rem;
-  width: 25%;
+  width: 35%;
 }
 
 .uploaded-files ul{
@@ -76,4 +76,5 @@ button:hover{
 
 .uploaded-files ul a{
   text-decoration: none;
+  color: #0044d4;
 }
