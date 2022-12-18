@@ -1,4 +1,4 @@
-# CSV Upload and Reader
+# CSV Upload and Reader App
 
 ## Features
 
